@@ -84,7 +84,7 @@ No missing file was invented. The four Step 2 data files are legitimately genera
 | B3 | Original project specification | Steps 2, 6 | Column expectations for the 6 core tables; the "demo contract" defining minimal payload fields |
 | B4 | Gemini API key | Step 4 (live tests), Step 10 | Placed in backend `.env` only |
 | B5 | `neobridge_referral_offer_delay_dataset.csv` | Step 9 | The file |
-| B6 | GitHub write access | committing each step | GitHub must be connected for this Claude account; currently not linked, so Step 1 files could not be pushed |
+| B6 | GitHub write access | committing each step | **RESOLVED** (Pushed to main on 2026-10-31) for this Claude account; currently not linked, so Step 1 files could not be pushed |
 
 | ID | Open decision | Resolve in |
 |---|---|---|

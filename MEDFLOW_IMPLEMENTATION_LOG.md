@@ -52,4 +52,4 @@ Chronological record of work sessions. Newest entries at the bottom. Times are I
 
 **Failures fixed during the step:** none in the data. Process fix: `initdb` refuses to run as root, so the DB tests run as the unprivileged `claude` user.
 
-**Open:** B1 (apply to live Supabase), B2 (real condition distribution), KIMS identity confirmation, B6 (GitHub push).
+**Open:** B1 (apply to live Supabase), B2 (real condition distribution), KIMS identity confirmation, B6 (GitHub push: RESOLVED).
