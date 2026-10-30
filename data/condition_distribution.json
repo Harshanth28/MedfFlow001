@@ -1,0 +1,17 @@
+{
+  "status": "PROVISIONAL",
+  "status_reason": "The neonatal dataset generation specification was referenced but not supplied as a file. Its condition distribution is therefore unknown. This distribution was authored in Step 2 so generation could proceed. Replace the counts below with the specification's distribution and re-run data/generator/build_dataset.py; the validator enforces whatever this file says.",
+  "authored": "2026-10-31",
+  "total": 30,
+  "categories": [
+    { "id": "A_PREMATURITY_COMPLICATIONS", "label": "Complications of prematurity (chronic lung disease, retinopathy, post-haemorrhagic hydrocephalus, ex-preterm surgical)", "count": 5 },
+    { "id": "B_RESPIRATORY_FAILURE",       "label": "Respiratory failure (RDS, meconium aspiration/PPHN, air leak, chylothorax)",                                      "count": 5 },
+    { "id": "C_HIE",                        "label": "Hypoxic-ischaemic encephalopathy",                                                                              "count": 3 },
+    { "id": "D_CONGENITAL_HEART",           "label": "Congenital heart disease",                                                                                      "count": 4 },
+    { "id": "E_SURGICAL",                   "label": "Neonatal surgical conditions (NEC, CDH, oesophageal atresia, gastroschisis, malrotation, Hirschsprung)",        "count": 6 },
+    { "id": "F_SEPSIS",                     "label": "Neonatal sepsis / meningitis",                                                                                   "count": 3 },
+    { "id": "G_HYPERBILIRUBINAEMIA",        "label": "Severe hyperbilirubinaemia needing exchange-capable care",                                                       "count": 2 },
+    { "id": "H_NEUROLOGICAL",               "label": "Non-HIE neurological (refractory seizures)",                                                                      "count": 1 },
+    { "id": "I_METABOLIC",                  "label": "Suspected inborn error of metabolism",                                                                            "count": 1 }
+  ]
+}

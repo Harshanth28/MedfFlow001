@@ -6,7 +6,7 @@
 | Step | Title | Status |
 |---|---|---|
 | 1 | Existing project audit and final architecture | **VERIFIED** (2026-10-31) |
-| 2 | Supabase database and synthetic dataset | NOT STARTED — **blocked on inputs B1–B3** |
+| 2 | Supabase database and synthetic dataset | **COMPLETE — VERIFIED LOCALLY; LIVE SUPABASE NOT YET APPLIED** (2026-10-31). Condition distribution PROVISIONAL (B2) |
 | 3 | Authentication, roles, backend foundation | NOT STARTED |
 | 4 | Baby registry, record retrieval, Gemini AI | NOT STARTED — needs B4 |
 | 5 | Hospital matching and ranking engine | NOT STARTED |
@@ -88,9 +88,9 @@ No missing file was invented. The four Step 2 data files are legitimately genera
 
 | ID | Open decision | Resolve in |
 |---|---|---|
-| D1 | Which real hospital is HOSP002 and which is HOSP003. They must rank #1 and #2 for baby 10482 from genuine coordinates and synthetic readiness, not by forcing the order | Step 2 |
-| D2 | Coordinates of the fictional HOSP001 Demo Referral Centre (must be in Bengaluru and plausible) | Step 2 |
-| D3 | Separate `transfers` table vs. columns on `transfer_requests` | Step 2 (after B1) |
+| D1 | ~~Which real hospital is HOSP002 / HOSP003~~ **Resolved in Step 2:** HOSP002 = Rainbow Children's Hospital, Electronic City; HOSP003 = Chinmaya Mission Hospital. They are the two nearest eligible hospitals for 10482 in the seeded data | Step 2 ✔ |
+| D2 | ~~Coordinates of HOSP001~~ **Resolved in Step 2:** fictional site on Hosur Road near Electronic City (12.8615, 77.6530) | Step 2 ✔ |
+| D3 | ~~Separate `transfers` table?~~ **Resolved in Step 2:** separate `transfers` table (unverified against live schema, A1) | Step 2 ✔ |
 | D4 | Final WSM weights + rationale | Step 5 |
 | D5 | Gemini model name (from Google's current list, not memory) | Step 4 |
 | D6 | Report access policy after transfer closure (revoke immediately vs. short grace period) | Step 7 |
@@ -149,6 +149,91 @@ None.
 ### 1.12 Verification status
 
 **VERIFIED.** All Step 1 acceptance criteria are met, with unknowns recorded rather than assumed: repo inspected, functionality classified, database architecture documented (deployed state flagged unknown), technology decisions recorded, all ten steps defined.
+
+---
+
+## Step 2 — Supabase database and complete synthetic dataset
+
+**Scope:** Schema (proposed migration), supporting tables, 30 synthetic babies, separate expected requirements, Bengaluru demo network, demo scenario, data files, validation. No auth, UI, AI, matching or ML.
+
+### 2.1 Inputs actually available
+
+| Input | Status at Step 2 |
+|---|---|
+| Neonatal dataset specification (file) | **Not supplied.** Used the facts stated in the Step 2 brief (30 babies, 5-digit codes, Aarav 10482 details, 6 tables, separate expectations, HOSP001→002→003 demo, minimal sharing). The **condition distribution was not stated**, so a PROVISIONAL one was authored in `data/condition_distribution.json` (B2 still open) |
+| Live Supabase schema | **Not supplied.** The migration is a proposal; see `supabase/SCHEMA_ASSUMPTIONS.md` (A1–A12). **The live database has not been inspected or populated** |
+| Public hospital facts | Retrieved 2026-10-31 from the cited pages in `data/hospital_sources.json` |
+
+### 2.2 Completed components
+
+- **Migration** `supabase/migrations/20261031000100_core_schema.sql`:
+  - 6 core tables + catalogues (`equipment_types`, `specialist_types`).
+  - Supporting tables: `hospital_capacity`, `baby_expected_requirements` (+ equipment / specialist junctions), `ai_requirement_extractions`, `transfers`, `report_access_grants`, `audit_logs`.
+  - CHECK / FK / partial-unique constraints, indexes, an append-only audit trigger, and RLS enabled deny-all.
+  - Re-runnable.
+- **Generator** `data/generator/` (deterministic; edit the sources, never the outputs): `clinical_records.py` (30 records, raw and expected kept apart), `network.py` (public facts vs `sim` profile), `build_dataset.py`.
+- **Data files:** `baby_dataset.json`, `expected_requirements.json`, `baby_seed.sql`, `hospital_seed.sql`, `demo_transfer_scenario.json`, `baby_testing.md`, `hospital_sources.json`, `bengaluru_hospitals.json`, `condition_distribution.json`.
+- **Demo network:**
+  - HOSP001: fictional referrer.
+  - HOSP002: Rainbow Electronic City.
+  - HOSP003: Chinmaya Mission.
+  - HOSP004: KIMS.
+  - HOSP005: Bangalore Baptist.
+  - HOSP006: Manipal Hebbal.
+  - HOSP007: Aster CMI.
+  - HOSP008: St. Martha's.
+  - All operational values are prefixed `sim_` or live in tables forced `is_synthetic = true`.
+- **Demo design for 10482:**
+  - Eligible: HOSP002 (≈2.0 km), HOSP003 (≈12.6 km), HOSP005 (≈20.8 km).
+  - Excluded, with one distinct reason each: HOSP004 (laser unavailable), HOSP006 (no paediatric ophthalmologist), HOSP007 (intensive beds full), HOSP008 (NICU level 2), HOSP001 (source).
+  - HOSP002 has exactly 1 free intensive bed, which the scripted capacity event consumes before HOSP002's confirmation.
+  - Nothing is pre-seeded into the workflow tables.
+
+### 2.3 Files created or modified
+
+Created:
+- `supabase/migrations/20261031000100_core_schema.sql`
+- `supabase/SCHEMA_ASSUMPTIONS.md`
+- `supabase/tests/db_assertions.sql`
+- `supabase/tests/run_db_tests.sh`
+- `data/condition_distribution.json`
+- `data/generator/{clinical_records,network,build_dataset}.py`
+- `data/tests/test_dataset.py`
+- the 8 generated data files above
+- `.gitignore`
+
+Modified: `MEDFLOW_PROJECT_STATE.md`, `MEDFLOW_IMPLEMENTATION_LOG.md`, `MEDFLOW_ARCHITECTURE.md` (§4 updated).
+
+### 2.4 Database changes
+
+The proposed schema above, applied to a **local PostgreSQL 16.15** test cluster only. **No change has been made to Supabase.**
+
+### 2.5 Tests executed
+
+| Suite | Command | Result |
+|---|---|---|
+| File-level validation (counts, unique 5-digit codes, ages, Aarav = 67 days, note/structure agreement, plausibility, oxygen consistency, completeness, no duplicate text, valid IDs, raw/expected separation and leak scan, hospital FKs, public vs simulated separation, minimal payload, scenario consistency, not pre-seeded, determinism) | `python3 -m pytest data/tests -q` | **257 passed** |
+| Validator mutation check (11 injected faults: priority word leak, code leak, wrong age, duplicate code, duplicate note, bad FK, expected key in raw record, oxygen contradiction, bad specialist ID, misfiled facility, payload leak) | scratch script | **11 / 11 detected** |
+| Database: migration ×2, seeds ×2 (idempotency), positive assertions, 16 constraint rejections each confirmed to come from the intended constraint | `supabase/tests/run_db_tests.sh` | **ALL DATABASE ASSERTIONS PASSED** |
+
+### 2.6 Known limitations
+
+1. **Condition distribution is provisional** (B2). Supplying the real one means editing one JSON file and `clinical_records.py`, then re-running the generator and tests.
+2. **Not applied to Supabase** (B1). The migration skips existing tables (`IF NOT EXISTS`), so a live schema must be compared first (A1–A12).
+3. Hospital coordinates for HOSP002, 003, 006 and 007 are locality-level approximations; HOSP008 uses a co-located institution's coordinates. Distances are therefore approximate.
+4. "KIMS Bengaluru" is interpreted as Kempegowda Institute of Medical Sciences. **Confirm.**
+5. Synthetic report PDFs referenced by `report_ref` do not exist yet. They are created and uploaded to private Storage in Step 4.
+6. `hospital_users` and `auth.users` foreign keys are deferred to Step 3 (A10, A11).
+7. Clinical content is plausible but fictional and has not been reviewed by a clinician.
+
+### 2.7 Remaining work (for Step 2 to be fully VERIFIED)
+
+- Supply the Supabase schema export (B1), reconcile it, apply the migration and seeds to the live project, and run `DATABASE_URL=… supabase/tests/run_db_tests.sh` against it.
+- Supply the specification's condition distribution (B2) and regenerate if it differs.
+
+### 2.8 Verification status
+
+**COMPLETE — VERIFIED LOCALLY; LIVE SUPABASE NOT YET APPLIED.** Every Step 2 validation passes on real PostgreSQL. The acceptance criterion "database successfully populated" is met for the local test database, not yet for the Supabase project.
 
 ---
 

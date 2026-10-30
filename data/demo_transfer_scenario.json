@@ -1,0 +1,260 @@
+{
+  "notice": "SYNTHETIC DEMONSTRATION DATA. All people are fictional. Not real patients and not for clinical use. Hospital names and public facts are real; every operational value (NICU level, equipment, specialists, beds, readiness) is SIMULATED. Not live bed availability. No partnership is implied.",
+  "scenario_id": "DEMO-10482-ESCALATION",
+  "reference_date": "2026-10-31",
+  "baby_code": "10482",
+  "source_hospital_id": "HOSP001",
+  "assumption": "The clinician approves requirements identical to the expected profile for 10482. In the live demo the approved values come from the Step 4 review screen.",
+  "approved_requirements": {
+    "required_nicu_level": 3,
+    "required_bed_type": "NICU_INTENSIVE",
+    "required_equipment": [
+      "EQ_HFNC",
+      "EQ_CONV_VENTILATOR",
+      "EQ_ROP_LASER"
+    ],
+    "required_care_facilities": [
+      "FAC_NICU_PROCEDURE_ROOM"
+    ],
+    "required_specialists": [
+      "SP_NEONATOLOGIST",
+      "SP_PAED_OPHTHALMOLOGIST",
+      "SP_PAED_ANAESTHETIST"
+    ],
+    "expected_priority": "URGENT"
+  },
+  "expected_candidate_assessment": {
+    "_note": "Expected outcome derived from seeded data, for Step 5 tests to confirm. Distances are approximate straight-line km from approximate coordinates; not road distance or ETA.",
+    "candidates": [
+      {
+        "hospital_id": "HOSP001",
+        "eligible": false,
+        "reasons": [
+          "source hospital"
+        ]
+      },
+      {
+        "hospital_id": "HOSP002",
+        "name": "Rainbow Children's Hospital, Electronic City",
+        "straight_line_km_approx": 2.0,
+        "eligible": true,
+        "reasons": [
+          "all mandatory requirements satisfied"
+        ]
+      },
+      {
+        "hospital_id": "HOSP003",
+        "name": "Chinmaya Mission Hospital",
+        "straight_line_km_approx": 12.6,
+        "eligible": true,
+        "reasons": [
+          "all mandatory requirements satisfied"
+        ]
+      },
+      {
+        "hospital_id": "HOSP004",
+        "name": "Kempegowda Institute of Medical Sciences Hospital (KIMS)",
+        "straight_line_km_approx": 13.6,
+        "eligible": false,
+        "reasons": [
+          "EQ_ROP_LASER unavailable (SIMULATED: out of service for maintenance)"
+        ]
+      },
+      {
+        "hospital_id": "HOSP005",
+        "name": "Bangalore Baptist Hospital",
+        "straight_line_km_approx": 20.8,
+        "eligible": true,
+        "reasons": [
+          "all mandatory requirements satisfied"
+        ]
+      },
+      {
+        "hospital_id": "HOSP006",
+        "name": "Manipal Hospital, Hebbal",
+        "straight_line_km_approx": 21.3,
+        "eligible": false,
+        "reasons": [
+          "missing SP_PAED_OPHTHALMOLOGIST"
+        ]
+      },
+      {
+        "hospital_id": "HOSP007",
+        "name": "Aster CMI Hospital",
+        "straight_line_km_approx": 22.7,
+        "eligible": false,
+        "reasons": [
+          "no available NICU_INTENSIVE bed"
+        ]
+      },
+      {
+        "hospital_id": "HOSP008",
+        "name": "St. Martha's Hospital",
+        "straight_line_km_approx": 13.9,
+        "eligible": false,
+        "reasons": [
+          "NICU level 2 below required 3",
+          "missing EQ_CONV_VENTILATOR",
+          "missing EQ_ROP_LASER",
+          "missing FAC_NICU_PROCEDURE_ROOM",
+          "missing SP_PAED_OPHTHALMOLOGIST",
+          "missing SP_PAED_ANAESTHETIST",
+          "no available NICU_INTENSIVE bed"
+        ]
+      }
+    ],
+    "expected_eligible_order_by_distance": [
+      "HOSP002",
+      "HOSP003",
+      "HOSP005"
+    ]
+  },
+  "minimal_offer_payload": {
+    "policy": "demo",
+    "allowed_fields": [
+      "baby_code",
+      "baby_name",
+      "date_of_birth",
+      "age_days",
+      "required_nicu_level",
+      "required_equipment",
+      "required_specialists",
+      "priority",
+      "source_hospital_id",
+      "synthetic"
+    ],
+    "forbidden_fields": [
+      "medical_history",
+      "clinical_notes",
+      "symptoms",
+      "condition_summary",
+      "report_ref",
+      "current_care",
+      "oxygen_support",
+      "transfer_reason"
+    ],
+    "pseudonymous_policy_replaces": {
+      "baby_code": "referral_token",
+      "baby_name": null,
+      "date_of_birth": null
+    },
+    "payload": {
+      "baby_code": "10482",
+      "baby_name": "Aarav Kumar",
+      "date_of_birth": "2026-08-25",
+      "age_days": 67,
+      "required_nicu_level": 3,
+      "required_equipment": [
+        "EQ_HFNC",
+        "EQ_CONV_VENTILATOR",
+        "EQ_ROP_LASER",
+        "FAC_NICU_PROCEDURE_ROOM"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_OPHTHALMOLOGIST",
+        "SP_PAED_ANAESTHETIST"
+      ],
+      "priority": "URGENT",
+      "source_hospital_id": "HOSP001",
+      "synthetic": true
+    }
+  },
+  "steps": [
+    {
+      "n": 1,
+      "actor": "HOSP001 REFERRER",
+      "action": "Look up baby 10482",
+      "expect": "Aarav Kumar, 67 days"
+    },
+    {
+      "n": 2,
+      "actor": "HOSP001 REFERRER",
+      "action": "Run AI extraction, review and confirm requirements",
+      "expect": "review_status CONFIRMED"
+    },
+    {
+      "n": 3,
+      "actor": "system",
+      "action": "Match hospitals",
+      "expect": "eligible ranked list begins HOSP002, HOSP003 (to be verified in Step 5)"
+    },
+    {
+      "n": 4,
+      "actor": "system",
+      "action": "Create offer #1 to HOSP002 with the minimal payload",
+      "expect": "transfer_attempts status PENDING, sequence_no 1"
+    },
+    {
+      "n": 5,
+      "actor": "HOSP002 staff (authorised)",
+      "action": "Record capacity change: last NICU_INTENSIVE bed now occupied",
+      "expect": "HOSP002 NICU_INTENSIVE occupied 9 -> 10 (0 available)"
+    },
+    {
+      "n": 6,
+      "actor": "HOSP002 RECEIVER",
+      "action": "Decline offer #1 with reason 'NICU bed unavailable at confirmation time'",
+      "expect": "offer #1 REJECTED, history kept"
+    },
+    {
+      "n": 7,
+      "actor": "system",
+      "action": "Escalate to next eligible hospital",
+      "expect": "offer #2 to HOSP003 PENDING, sequence_no 2"
+    },
+    {
+      "n": 8,
+      "actor": "HOSP003 RECEIVER",
+      "action": "Accept offer #2 (real user action)",
+      "expect": "capacity re-checked; HOSP003 NICU_INTENSIVE reserved 0 -> 1; transfer created; referral CONFIRMED"
+    },
+    {
+      "n": 9,
+      "actor": "system",
+      "action": "Grant report access",
+      "expect": "only HOSP003 can retrieve the full synthetic record"
+    }
+  ],
+  "expected_final_state": {
+    "transfer_request_status": "CONFIRMED",
+    "attempts": [
+      {
+        "sequence_no": 1,
+        "hospital_id": "HOSP002",
+        "status": "REJECTED",
+        "rejection_reason": "NICU bed unavailable at confirmation time"
+      },
+      {
+        "sequence_no": 2,
+        "hospital_id": "HOSP003",
+        "status": "ACCEPTED"
+      }
+    ],
+    "capacity": {
+      "HOSP002": {
+        "NICU_INTENSIVE": {
+          "total": 10,
+          "occupied": 10,
+          "reserved": 0
+        }
+      },
+      "HOSP003": {
+        "NICU_INTENSIVE": {
+          "total": 8,
+          "occupied": 5,
+          "reserved": 1
+        }
+      }
+    },
+    "transfer": {
+      "receiving_hospital_id": "HOSP003",
+      "status": "ACCEPTED",
+      "reserved_bed_type": "NICU_INTENSIVE"
+    }
+  },
+  "rules": [
+    "Nothing in this scenario is pre-seeded into transfer_requests or transfer_attempts.",
+    "Acceptance must happen through the real application action, never through seed data."
+  ]
+}

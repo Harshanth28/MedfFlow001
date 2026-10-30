@@ -1,0 +1,986 @@
+{
+  "notice": "Hospital names and public facts are real; every operational value (NICU level, equipment, specialists, beds, readiness) is SIMULATED. Not live bed availability. No partnership is implied.",
+  "public_facts_retrieved": "2026-10-31",
+  "coordinate_quality_legend": {
+    "SOURCED": "coordinates taken from a cited public source",
+    "PROXY_SOURCED": "coordinates of a co-located institution from a cited source",
+    "APPROXIMATE_LOCALITY": "address verified, coordinates approximated to the locality; not geocoded",
+    "FICTIONAL": "invented site for the fictional referral centre"
+  },
+  "hospitals": [
+    {
+      "id": "HOSP001",
+      "short_name": "Demo Referral Centre",
+      "is_fictional": true,
+      "public_information": {
+        "name": "MedFlow Demo Referral Centre (fictional)",
+        "locality": "Hosur Road, near Electronic City, Bengaluru (fictional site)",
+        "address": null,
+        "latitude": 12.8615,
+        "longitude": 77.653,
+        "coordinate_quality": "FICTIONAL",
+        "retrieved": null
+      },
+      "demo_network": {
+        "is_active": true,
+        "can_refer": true,
+        "can_receive": false
+      },
+      "simulated_operational_profile": {
+        "_label": "SIMULATED — not the hospital's real capability or capacity",
+        "nicu_level": 2,
+        "readiness_score": 0.7,
+        "equipment_and_facilities": [
+          {
+            "code": "EQ_CPAP",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFNC",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CONV_VENTILATOR",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INTENSIVE_PHOTOTHERAPY",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CRANIAL_USG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_TRANSPORT_INCUBATOR",
+            "available": true,
+            "note": null
+          }
+        ],
+        "specialists": [
+          "SP_NEONATOLOGIST"
+        ],
+        "bed_capacity": [
+          {
+            "bed_type": "NICU_HDU",
+            "total_beds": 12,
+            "occupied_beds": 9,
+            "reserved_beds": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "HOSP002",
+      "short_name": "Rainbow Electronic City",
+      "is_fictional": false,
+      "public_information": {
+        "name": "Rainbow Children's Hospital, Electronic City",
+        "locality": "Electronic City, Bengaluru",
+        "address": null,
+        "latitude": 12.8452,
+        "longitude": 77.6602,
+        "coordinate_quality": "APPROXIMATE_LOCALITY",
+        "retrieved": "2026-10-31"
+      },
+      "demo_network": {
+        "is_active": true,
+        "can_refer": false,
+        "can_receive": true
+      },
+      "simulated_operational_profile": {
+        "_label": "SIMULATED — not the hospital's real capability or capacity",
+        "nicu_level": 3,
+        "readiness_score": 0.85,
+        "equipment_and_facilities": [
+          {
+            "code": "EQ_CONV_VENTILATOR",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFOV",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CPAP",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFNC",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_THERAPEUTIC_COOLING",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_AEEG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_NEONATAL_ECHO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_ROP_LASER",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INTENSIVE_PHOTOTHERAPY",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CRANIAL_USG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_TRANSPORT_INCUBATOR",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_NICU_PROCEDURE_ROOM",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_BLOOD_BANK",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_HUMAN_MILK_BANK",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_ISOLATION_ROOM",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_MRI",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_PARENTERAL_NUTRITION",
+            "available": true,
+            "note": null
+          }
+        ],
+        "specialists": [
+          "SP_NEONATOLOGIST",
+          "SP_PAED_OPHTHALMOLOGIST",
+          "SP_PAED_ANAESTHETIST",
+          "SP_PAED_PULMONOLOGIST",
+          "SP_PAED_NEUROLOGIST",
+          "SP_PAED_CARDIOLOGIST"
+        ],
+        "bed_capacity": [
+          {
+            "bed_type": "NICU_INTENSIVE",
+            "total_beds": 10,
+            "occupied_beds": 9,
+            "reserved_beds": 0
+          },
+          {
+            "bed_type": "NICU_HDU",
+            "total_beds": 8,
+            "occupied_beds": 6,
+            "reserved_beds": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "HOSP003",
+      "short_name": "Chinmaya Mission",
+      "is_fictional": false,
+      "public_information": {
+        "name": "Chinmaya Mission Hospital",
+        "locality": "Indiranagar, Bengaluru",
+        "address": "1/1, Chinmaya Mission Hospital Rd, Opp. Krishna Temple, Defence Colony, Indiranagar, Bengaluru 560038",
+        "latitude": 12.9745,
+        "longitude": 77.641,
+        "coordinate_quality": "APPROXIMATE_LOCALITY",
+        "retrieved": "2026-10-31"
+      },
+      "demo_network": {
+        "is_active": true,
+        "can_refer": false,
+        "can_receive": true
+      },
+      "simulated_operational_profile": {
+        "_label": "SIMULATED — not the hospital's real capability or capacity",
+        "nicu_level": 3,
+        "readiness_score": 0.8,
+        "equipment_and_facilities": [
+          {
+            "code": "EQ_CONV_VENTILATOR",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CPAP",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFNC",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_ROP_LASER",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_AEEG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INTENSIVE_PHOTOTHERAPY",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CRANIAL_USG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_NEONATAL_ECHO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_NICU_PROCEDURE_ROOM",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_BLOOD_BANK",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_MRI",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_PARENTERAL_NUTRITION",
+            "available": true,
+            "note": null
+          }
+        ],
+        "specialists": [
+          "SP_NEONATOLOGIST",
+          "SP_PAED_OPHTHALMOLOGIST",
+          "SP_PAED_ANAESTHETIST",
+          "SP_PAED_NEUROLOGIST"
+        ],
+        "bed_capacity": [
+          {
+            "bed_type": "NICU_INTENSIVE",
+            "total_beds": 8,
+            "occupied_beds": 5,
+            "reserved_beds": 0
+          },
+          {
+            "bed_type": "NICU_HDU",
+            "total_beds": 6,
+            "occupied_beds": 4,
+            "reserved_beds": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "HOSP004",
+      "short_name": "KIMS",
+      "is_fictional": false,
+      "public_information": {
+        "name": "Kempegowda Institute of Medical Sciences Hospital (KIMS)",
+        "locality": "V.V. Puram, Bengaluru",
+        "address": null,
+        "latitude": 12.9565,
+        "longitude": 77.574278,
+        "coordinate_quality": "SOURCED",
+        "retrieved": "2026-10-31"
+      },
+      "demo_network": {
+        "is_active": true,
+        "can_refer": false,
+        "can_receive": true
+      },
+      "simulated_operational_profile": {
+        "_label": "SIMULATED — not the hospital's real capability or capacity",
+        "nicu_level": 4,
+        "readiness_score": 0.7,
+        "equipment_and_facilities": [
+          {
+            "code": "EQ_CONV_VENTILATOR",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFOV",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CPAP",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFNC",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_THERAPEUTIC_COOLING",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_AEEG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_NEONATAL_ECHO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_ROP_LASER",
+            "available": false,
+            "note": "SIMULATED: out of service for maintenance"
+          },
+          {
+            "code": "EQ_INTENSIVE_PHOTOTHERAPY",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_PERITONEAL_DIALYSIS",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CRANIAL_USG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_NEONATAL_SURGICAL_OT",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_BLOOD_BANK",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_MRI",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_PARENTERAL_NUTRITION",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_CONTRAST_RADIOLOGY",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_ISOLATION_ROOM",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_NICU_PROCEDURE_ROOM",
+            "available": true,
+            "note": null
+          }
+        ],
+        "specialists": [
+          "SP_NEONATOLOGIST",
+          "SP_PAED_SURGEON",
+          "SP_PAED_NEUROSURGEON",
+          "SP_PAED_ANAESTHETIST",
+          "SP_PAED_OPHTHALMOLOGIST",
+          "SP_PAED_NEUROLOGIST",
+          "SP_PAED_NEPHROLOGIST",
+          "SP_PAED_PULMONOLOGIST"
+        ],
+        "bed_capacity": [
+          {
+            "bed_type": "NICU_INTENSIVE",
+            "total_beds": 14,
+            "occupied_beds": 11,
+            "reserved_beds": 0
+          },
+          {
+            "bed_type": "NICU_SURGICAL",
+            "total_beds": 6,
+            "occupied_beds": 4,
+            "reserved_beds": 0
+          },
+          {
+            "bed_type": "NICU_HDU",
+            "total_beds": 10,
+            "occupied_beds": 7,
+            "reserved_beds": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "HOSP005",
+      "short_name": "Bangalore Baptist",
+      "is_fictional": false,
+      "public_information": {
+        "name": "Bangalore Baptist Hospital",
+        "locality": "Hebbal, Bengaluru",
+        "address": null,
+        "latitude": 13.038266,
+        "longitude": 77.58927,
+        "coordinate_quality": "SOURCED",
+        "retrieved": "2026-10-31"
+      },
+      "demo_network": {
+        "is_active": true,
+        "can_refer": false,
+        "can_receive": true
+      },
+      "simulated_operational_profile": {
+        "_label": "SIMULATED — not the hospital's real capability or capacity",
+        "nicu_level": 3,
+        "readiness_score": 0.88,
+        "equipment_and_facilities": [
+          {
+            "code": "EQ_CONV_VENTILATOR",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFOV",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CPAP",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFNC",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_THERAPEUTIC_COOLING",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_AEEG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_NEONATAL_ECHO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_ROP_LASER",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INTENSIVE_PHOTOTHERAPY",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CRANIAL_USG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_TRANSPORT_INCUBATOR",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_NICU_PROCEDURE_ROOM",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_BLOOD_BANK",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_HUMAN_MILK_BANK",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_MRI",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_PARENTERAL_NUTRITION",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_ISOLATION_ROOM",
+            "available": true,
+            "note": null
+          }
+        ],
+        "specialists": [
+          "SP_NEONATOLOGIST",
+          "SP_PAED_OPHTHALMOLOGIST",
+          "SP_PAED_ANAESTHETIST",
+          "SP_PAED_NEUROLOGIST",
+          "SP_PAED_PULMONOLOGIST"
+        ],
+        "bed_capacity": [
+          {
+            "bed_type": "NICU_INTENSIVE",
+            "total_beds": 12,
+            "occupied_beds": 8,
+            "reserved_beds": 0
+          },
+          {
+            "bed_type": "NICU_HDU",
+            "total_beds": 10,
+            "occupied_beds": 7,
+            "reserved_beds": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "HOSP006",
+      "short_name": "Manipal Hebbal",
+      "is_fictional": false,
+      "public_information": {
+        "name": "Manipal Hospital, Hebbal",
+        "locality": "Hebbal, Bengaluru",
+        "address": "Kirloskar Business Park, Bellary Road, Hebbal, Bangalore 560024",
+        "latitude": 13.0446,
+        "longitude": 77.5958,
+        "coordinate_quality": "APPROXIMATE_LOCALITY",
+        "retrieved": "2026-10-31"
+      },
+      "demo_network": {
+        "is_active": true,
+        "can_refer": false,
+        "can_receive": true
+      },
+      "simulated_operational_profile": {
+        "_label": "SIMULATED — not the hospital's real capability or capacity",
+        "nicu_level": 3,
+        "readiness_score": 0.82,
+        "equipment_and_facilities": [
+          {
+            "code": "EQ_CONV_VENTILATOR",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFOV",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CPAP",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFNC",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_THERAPEUTIC_COOLING",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_AEEG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_NEONATAL_ECHO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_ROP_LASER",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INTENSIVE_PHOTOTHERAPY",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CRANIAL_USG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_NICU_PROCEDURE_ROOM",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_BLOOD_BANK",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_MRI",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_PARENTERAL_NUTRITION",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_ISOLATION_ROOM",
+            "available": true,
+            "note": null
+          }
+        ],
+        "specialists": [
+          "SP_NEONATOLOGIST",
+          "SP_PAED_ANAESTHETIST",
+          "SP_PAED_NEUROLOGIST",
+          "SP_PAED_PULMONOLOGIST",
+          "SP_PAED_CARDIOLOGIST"
+        ],
+        "bed_capacity": [
+          {
+            "bed_type": "NICU_INTENSIVE",
+            "total_beds": 10,
+            "occupied_beds": 7,
+            "reserved_beds": 0
+          },
+          {
+            "bed_type": "NICU_HDU",
+            "total_beds": 8,
+            "occupied_beds": 5,
+            "reserved_beds": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "HOSP007",
+      "short_name": "Aster CMI",
+      "is_fictional": false,
+      "public_information": {
+        "name": "Aster CMI Hospital",
+        "locality": "Sahakar Nagar, Hebbal, Bengaluru",
+        "address": "No. 43/2, New Airport Road, NH 44, Sahakar Nagar, Hebbal, Karnataka 560092",
+        "latitude": 13.0566,
+        "longitude": 77.5924,
+        "coordinate_quality": "APPROXIMATE_LOCALITY",
+        "retrieved": "2026-10-31"
+      },
+      "demo_network": {
+        "is_active": true,
+        "can_refer": false,
+        "can_receive": true
+      },
+      "simulated_operational_profile": {
+        "_label": "SIMULATED — not the hospital's real capability or capacity",
+        "nicu_level": 4,
+        "readiness_score": 0.9,
+        "equipment_and_facilities": [
+          {
+            "code": "EQ_CONV_VENTILATOR",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFOV",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CPAP",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFNC",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_THERAPEUTIC_COOLING",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_AEEG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_NEONATAL_ECHO",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_ROP_LASER",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INTENSIVE_PHOTOTHERAPY",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_PERITONEAL_DIALYSIS",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CRANIAL_USG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_TRANSPORT_INCUBATOR",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_NEONATAL_SURGICAL_OT",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_PAED_CATH_LAB",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_BLOOD_BANK",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_HUMAN_MILK_BANK",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_ISOLATION_ROOM",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_NICU_PROCEDURE_ROOM",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_MRI",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_PARENTERAL_NUTRITION",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_CONTRAST_RADIOLOGY",
+            "available": true,
+            "note": null
+          }
+        ],
+        "specialists": [
+          "SP_NEONATOLOGIST",
+          "SP_PAED_SURGEON",
+          "SP_PAED_CARDIOLOGIST",
+          "SP_PAED_CARDIAC_SURGEON",
+          "SP_PAED_NEUROLOGIST",
+          "SP_PAED_NEUROSURGEON",
+          "SP_PAED_OPHTHALMOLOGIST",
+          "SP_PAED_ANAESTHETIST",
+          "SP_PAED_PULMONOLOGIST",
+          "SP_PAED_NEPHROLOGIST",
+          "SP_METABOLIC_GENETICIST"
+        ],
+        "bed_capacity": [
+          {
+            "bed_type": "NICU_INTENSIVE",
+            "total_beds": 16,
+            "occupied_beds": 16,
+            "reserved_beds": 0
+          },
+          {
+            "bed_type": "NICU_CARDIAC",
+            "total_beds": 6,
+            "occupied_beds": 4,
+            "reserved_beds": 0
+          },
+          {
+            "bed_type": "NICU_SURGICAL",
+            "total_beds": 8,
+            "occupied_beds": 6,
+            "reserved_beds": 0
+          },
+          {
+            "bed_type": "NICU_HDU",
+            "total_beds": 10,
+            "occupied_beds": 8,
+            "reserved_beds": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "HOSP008",
+      "short_name": "St. Martha's",
+      "is_fictional": false,
+      "public_information": {
+        "name": "St. Martha's Hospital",
+        "locality": "Nrupathunga Road, Bengaluru",
+        "address": null,
+        "latitude": 12.97194,
+        "longitude": 77.59369,
+        "coordinate_quality": "PROXY_SOURCED",
+        "retrieved": "2026-10-31"
+      },
+      "demo_network": {
+        "is_active": true,
+        "can_refer": false,
+        "can_receive": true
+      },
+      "simulated_operational_profile": {
+        "_label": "SIMULATED — not the hospital's real capability or capacity",
+        "nicu_level": 2,
+        "readiness_score": 0.75,
+        "equipment_and_facilities": [
+          {
+            "code": "EQ_CPAP",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_HFNC",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_INTENSIVE_PHOTOTHERAPY",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_CRANIAL_USG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "EQ_AEEG",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_BLOOD_BANK",
+            "available": true,
+            "note": null
+          },
+          {
+            "code": "FAC_MRI",
+            "available": true,
+            "note": null
+          }
+        ],
+        "specialists": [
+          "SP_NEONATOLOGIST",
+          "SP_PAED_NEUROLOGIST"
+        ],
+        "bed_capacity": [
+          {
+            "bed_type": "NICU_HDU",
+            "total_beds": 10,
+            "occupied_beds": 6,
+            "reserved_beds": 0
+          }
+        ]
+      }
+    }
+  ]
+}

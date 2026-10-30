@@ -1,0 +1,557 @@
+{
+  "notice": "EVALUATION ONLY. Never send to the AI provider. SYNTHETIC DEMONSTRATION DATA. All people are fictional. Not real patients and not for clinical use.",
+  "reference_date": "2026-10-31",
+  "condition_distribution_status": "PROVISIONAL",
+  "count": 30,
+  "expected_requirements": [
+    {
+      "baby_code": "10482",
+      "condition_category": "A_PREMATURITY_COMPLICATIONS",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_HFNC",
+        "EQ_CONV_VENTILATOR",
+        "EQ_ROP_LASER"
+      ],
+      "required_care_facilities": [
+        "FAC_NICU_PROCEDURE_ROOM"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_OPHTHALMOLOGIST",
+        "SP_PAED_ANAESTHETIST"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "11307",
+      "condition_category": "A_PREMATURITY_COMPLICATIONS",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR",
+        "EQ_HFOV",
+        "EQ_INO",
+        "EQ_NEONATAL_ECHO"
+      ],
+      "required_care_facilities": [],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_CARDIOLOGIST",
+        "SP_PAED_PULMONOLOGIST"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "12754",
+      "condition_category": "A_PREMATURITY_COMPLICATIONS",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_SURGICAL",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [
+        "FAC_NEONATAL_SURGICAL_OT"
+      ],
+      "required_specialists": [
+        "SP_PAED_SURGEON",
+        "SP_PAED_ANAESTHETIST",
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "13096",
+      "condition_category": "A_PREMATURITY_COMPLICATIONS",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_CPAP",
+        "EQ_CONV_VENTILATOR",
+        "EQ_ROP_LASER"
+      ],
+      "required_care_facilities": [
+        "FAC_NICU_PROCEDURE_ROOM"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_OPHTHALMOLOGIST",
+        "SP_PAED_ANAESTHETIST"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "14628",
+      "condition_category": "A_PREMATURITY_COMPLICATIONS",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_SURGICAL",
+      "required_equipment": [
+        "EQ_CRANIAL_USG"
+      ],
+      "required_care_facilities": [
+        "FAC_NEONATAL_SURGICAL_OT"
+      ],
+      "required_specialists": [
+        "SP_PAED_NEUROSURGEON",
+        "SP_NEONATOLOGIST",
+        "SP_PAED_ANAESTHETIST"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "15183",
+      "condition_category": "B_RESPIRATORY_FAILURE",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR",
+        "EQ_CPAP"
+      ],
+      "required_care_facilities": [],
+      "required_specialists": [
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "16940",
+      "condition_category": "B_RESPIRATORY_FAILURE",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR",
+        "EQ_HFOV",
+        "EQ_INO",
+        "EQ_NEONATAL_ECHO"
+      ],
+      "required_care_facilities": [],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_CARDIOLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "17215",
+      "condition_category": "B_RESPIRATORY_FAILURE",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR",
+        "EQ_HFOV"
+      ],
+      "required_care_facilities": [],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_SURGEON"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "18569",
+      "condition_category": "B_RESPIRATORY_FAILURE",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_HFNC",
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [
+        "FAC_PARENTERAL_NUTRITION"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_SURGEON"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "19832",
+      "condition_category": "B_RESPIRATORY_FAILURE",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR",
+        "EQ_CRANIAL_USG"
+      ],
+      "required_care_facilities": [
+        "FAC_PARENTERAL_NUTRITION"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "20417",
+      "condition_category": "C_HIE",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_THERAPEUTIC_COOLING",
+        "EQ_AEEG",
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [
+        "FAC_MRI"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_NEUROLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "21688",
+      "condition_category": "C_HIE",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_THERAPEUTIC_COOLING",
+        "EQ_AEEG",
+        "EQ_CONV_VENTILATOR",
+        "EQ_PERITONEAL_DIALYSIS"
+      ],
+      "required_care_facilities": [
+        "FAC_BLOOD_BANK",
+        "FAC_MRI"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_NEUROLOGIST",
+        "SP_PAED_NEPHROLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "22351",
+      "condition_category": "C_HIE",
+      "required_nicu_level": 2,
+      "required_bed_type": "NICU_HDU",
+      "required_equipment": [
+        "EQ_AEEG"
+      ],
+      "required_care_facilities": [
+        "FAC_MRI"
+      ],
+      "required_specialists": [
+        "SP_PAED_NEUROLOGIST",
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "SEMI_URGENT"
+    },
+    {
+      "baby_code": "23904",
+      "condition_category": "D_CONGENITAL_HEART",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_CARDIAC",
+      "required_equipment": [
+        "EQ_NEONATAL_ECHO",
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [
+        "FAC_PAED_CATH_LAB"
+      ],
+      "required_specialists": [
+        "SP_PAED_CARDIOLOGIST",
+        "SP_PAED_CARDIAC_SURGEON",
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "24176",
+      "condition_category": "D_CONGENITAL_HEART",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_CARDIAC",
+      "required_equipment": [
+        "EQ_NEONATAL_ECHO",
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [
+        "FAC_PAED_CATH_LAB"
+      ],
+      "required_specialists": [
+        "SP_PAED_CARDIOLOGIST",
+        "SP_PAED_CARDIAC_SURGEON",
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "25530",
+      "condition_category": "D_CONGENITAL_HEART",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_CARDIAC",
+      "required_equipment": [
+        "EQ_NEONATAL_ECHO"
+      ],
+      "required_care_facilities": [
+        "FAC_PAED_CATH_LAB"
+      ],
+      "required_specialists": [
+        "SP_PAED_CARDIOLOGIST",
+        "SP_PAED_CARDIAC_SURGEON"
+      ],
+      "expected_priority": "SEMI_URGENT"
+    },
+    {
+      "baby_code": "26819",
+      "condition_category": "D_CONGENITAL_HEART",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_CARDIAC",
+      "required_equipment": [
+        "EQ_NEONATAL_ECHO",
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [
+        "FAC_PAED_CATH_LAB"
+      ],
+      "required_specialists": [
+        "SP_PAED_CARDIOLOGIST",
+        "SP_PAED_CARDIAC_SURGEON",
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "27463",
+      "condition_category": "E_SURGICAL",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_SURGICAL",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [
+        "FAC_NEONATAL_SURGICAL_OT",
+        "FAC_PARENTERAL_NUTRITION",
+        "FAC_BLOOD_BANK"
+      ],
+      "required_specialists": [
+        "SP_PAED_SURGEON",
+        "SP_PAED_ANAESTHETIST",
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "28095",
+      "condition_category": "E_SURGICAL",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_SURGICAL",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR",
+        "EQ_HFOV",
+        "EQ_INO",
+        "EQ_NEONATAL_ECHO"
+      ],
+      "required_care_facilities": [
+        "FAC_NEONATAL_SURGICAL_OT"
+      ],
+      "required_specialists": [
+        "SP_PAED_SURGEON",
+        "SP_PAED_ANAESTHETIST",
+        "SP_NEONATOLOGIST",
+        "SP_PAED_CARDIOLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "29742",
+      "condition_category": "E_SURGICAL",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_SURGICAL",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR",
+        "EQ_NEONATAL_ECHO"
+      ],
+      "required_care_facilities": [
+        "FAC_NEONATAL_SURGICAL_OT",
+        "FAC_PARENTERAL_NUTRITION"
+      ],
+      "required_specialists": [
+        "SP_PAED_SURGEON",
+        "SP_PAED_ANAESTHETIST",
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "30258",
+      "condition_category": "E_SURGICAL",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_SURGICAL",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [
+        "FAC_NEONATAL_SURGICAL_OT",
+        "FAC_PARENTERAL_NUTRITION"
+      ],
+      "required_specialists": [
+        "SP_PAED_SURGEON",
+        "SP_PAED_ANAESTHETIST",
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "31674",
+      "condition_category": "E_SURGICAL",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_SURGICAL",
+      "required_equipment": [],
+      "required_care_facilities": [
+        "FAC_NEONATAL_SURGICAL_OT",
+        "FAC_CONTRAST_RADIOLOGY"
+      ],
+      "required_specialists": [
+        "SP_PAED_SURGEON",
+        "SP_PAED_ANAESTHETIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "32901",
+      "condition_category": "E_SURGICAL",
+      "required_nicu_level": 4,
+      "required_bed_type": "NICU_SURGICAL",
+      "required_equipment": [],
+      "required_care_facilities": [
+        "FAC_NEONATAL_SURGICAL_OT",
+        "FAC_CONTRAST_RADIOLOGY"
+      ],
+      "required_specialists": [
+        "SP_PAED_SURGEON",
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "SEMI_URGENT"
+    },
+    {
+      "baby_code": "33547",
+      "condition_category": "F_SEPSIS",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR",
+        "EQ_AEEG"
+      ],
+      "required_care_facilities": [
+        "FAC_ISOLATION_ROOM",
+        "FAC_BLOOD_BANK"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_NEUROLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "34120",
+      "condition_category": "F_SEPSIS",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_CPAP",
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [
+        "FAC_ISOLATION_ROOM",
+        "FAC_BLOOD_BANK"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "35886",
+      "condition_category": "F_SEPSIS",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_CONV_VENTILATOR",
+        "EQ_HFNC"
+      ],
+      "required_care_facilities": [
+        "FAC_BLOOD_BANK"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "36213",
+      "condition_category": "G_HYPERBILIRUBINAEMIA",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_INTENSIVE_PHOTOTHERAPY"
+      ],
+      "required_care_facilities": [
+        "FAC_BLOOD_BANK"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "37659",
+      "condition_category": "G_HYPERBILIRUBINAEMIA",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_INTENSIVE_PHOTOTHERAPY",
+        "EQ_AEEG"
+      ],
+      "required_care_facilities": [
+        "FAC_BLOOD_BANK",
+        "FAC_MRI"
+      ],
+      "required_specialists": [
+        "SP_NEONATOLOGIST",
+        "SP_PAED_NEUROLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    },
+    {
+      "baby_code": "38402",
+      "condition_category": "H_NEUROLOGICAL",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_AEEG",
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [
+        "FAC_MRI"
+      ],
+      "required_specialists": [
+        "SP_PAED_NEUROLOGIST",
+        "SP_NEONATOLOGIST",
+        "SP_METABOLIC_GENETICIST"
+      ],
+      "expected_priority": "URGENT"
+    },
+    {
+      "baby_code": "39175",
+      "condition_category": "I_METABOLIC",
+      "required_nicu_level": 3,
+      "required_bed_type": "NICU_INTENSIVE",
+      "required_equipment": [
+        "EQ_PERITONEAL_DIALYSIS",
+        "EQ_CONV_VENTILATOR"
+      ],
+      "required_care_facilities": [],
+      "required_specialists": [
+        "SP_METABOLIC_GENETICIST",
+        "SP_PAED_NEPHROLOGIST",
+        "SP_NEONATOLOGIST"
+      ],
+      "expected_priority": "EMERGENCY"
+    }
+  ]
+}

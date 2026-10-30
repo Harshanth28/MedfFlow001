@@ -1,0 +1,131 @@
+{
+  "retrieved": "2026-10-31",
+  "policy": "Only the 'verified' items come from public sources. Everything operational is simulated.",
+  "hospitals": [
+    {
+      "id": "HOSP001",
+      "name": "MedFlow Demo Referral Centre (fictional)",
+      "coordinate_quality": "FICTIONAL",
+      "note": "Fictional demonstration referral centre. No real-world counterpart.",
+      "sources": []
+    },
+    {
+      "id": "HOSP002",
+      "name": "Rainbow Children's Hospital, Electronic City",
+      "coordinate_quality": "APPROXIMATE_LOCALITY",
+      "verified": [
+        "Rainbow Children's Medicare launched a 90-bed facility in Electronic City, Bengaluru (report updated 28 Jan 2026)"
+      ],
+      "not_verified": [
+        "street address",
+        "exact coordinates (locality-level approximation used)",
+        "any NICU capability"
+      ],
+      "sources": [
+        "https://scanx.trade/stock-market-news/stocks/rainbow-children-s-medicare-expands-in-bengaluru-with-new-90-bed-facility-in-electronic-city/31124788"
+      ]
+    },
+    {
+      "id": "HOSP003",
+      "name": "Chinmaya Mission Hospital",
+      "coordinate_quality": "APPROXIMATE_LOCALITY",
+      "verified": [
+        "name",
+        "street address (Indiranagar 560038)"
+      ],
+      "not_verified": [
+        "exact coordinates (locality-level approximation used)",
+        "any NICU capability; source page does not mention a NICU"
+      ],
+      "sources": [
+        "https://www.chinmayamission.com/global/chinmaya-mission-hospital"
+      ]
+    },
+    {
+      "id": "HOSP004",
+      "name": "Kempegowda Institute of Medical Sciences Hospital (KIMS)",
+      "coordinate_quality": "SOURCED",
+      "verified": [
+        "name",
+        "hospital on the V.V. Puram campus",
+        "coordinates 12.9565 N, 77.574278 E (Wikipedia, for the institute)"
+      ],
+      "not_verified": [
+        "street address",
+        "any NICU capability"
+      ],
+      "ambiguity": "'KIMS Bengaluru' interpreted as Kempegowda Institute of Medical Sciences, not KIMS Hospitals (Krishna Institute). Confirm with the project owner.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kempegowda_Institute_of_Medical_Sciences"
+      ]
+    },
+    {
+      "id": "HOSP005",
+      "name": "Bangalore Baptist Hospital",
+      "coordinate_quality": "SOURCED",
+      "verified": [
+        "name",
+        "locality Hebbal",
+        "coordinates 13.038266 N, 77.589270 E (Wikipedia)",
+        "formally opened 15 Jan 1973"
+      ],
+      "not_verified": [
+        "street address",
+        "any NICU capability; source page does not mention one"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bangalore_Baptist_Hospital"
+      ]
+    },
+    {
+      "id": "HOSP006",
+      "name": "Manipal Hospital, Hebbal",
+      "coordinate_quality": "APPROXIMATE_LOCALITY",
+      "verified": [
+        "name",
+        "address Kirloskar Business Park, Bellary Road, Hebbal 560024"
+      ],
+      "not_verified": [
+        "exact coordinates (locality-level approximation used)",
+        "any NICU capability; source page does not mention one"
+      ],
+      "sources": [
+        "https://www.manipalhospitalsglobal.com/hospitals/hebbal"
+      ]
+    },
+    {
+      "id": "HOSP007",
+      "name": "Aster CMI Hospital",
+      "coordinate_quality": "APPROXIMATE_LOCALITY",
+      "verified": [
+        "name",
+        "address No. 43/2, New Airport Road, NH 44, Sahakar Nagar, Hebbal 560092",
+        "a 'Paediatrics & Neonatology' specialty is listed"
+      ],
+      "not_verified": [
+        "exact coordinates (locality-level approximation used)",
+        "NICU level, beds or equipment"
+      ],
+      "sources": [
+        "https://www.asterhospitals.in/hospitals/aster-cmi-bangalore"
+      ]
+    },
+    {
+      "id": "HOSP008",
+      "name": "St. Martha's Hospital",
+      "coordinate_quality": "PROXY_SOURCED",
+      "verified": [
+        "name",
+        "co-located St. Martha's College of Nursing coordinates 12.97194 N, 77.59369 E (ROR) used as a proxy"
+      ],
+      "not_verified": [
+        "street address",
+        "hospital's own coordinates",
+        "any NICU capability"
+      ],
+      "sources": [
+        "https://api.ror.org/v2/organizations/https://ror.org/040eytj64"
+      ]
+    }
+  ]
+}

@@ -84,19 +84,23 @@ Frontend choice: **React + Vite.** No frontend existed at Step 1, so the "preser
 
 Mapping `transfer_requests` → referral and `transfer_attempts` → offer avoids creating duplicate `referrals` / `offers` tables. API names and table names may differ deliberately.
 
-Column definitions are **not yet known**. The specification says these tables already exist in Supabase, but no Supabase project or schema export was available at Step 1. Step 2 must inspect them first and use only additive `ALTER` migrations.
+Step 2 defined the columns in `supabase/migrations/20261031000100_core_schema.sql`. This is a **proposal**, tested on local PostgreSQL 16 but **not yet reconciled with the live Supabase schema**. See `supabase/SCHEMA_ASSUMPTIONS.md` (A1–A12). If the live tables differ, reconcile with additive `ALTER` migrations only.
 
-### 4.2 Supporting tables (Step 2, add only where needed)
+Conventions: hospital operational columns are prefixed `sim_` (simulated). Wholly synthetic tables carry `is_synthetic boolean CHECK (is_synthetic)`. HOSP001 is the fictional referrer; HOSP002–HOSP008 are real Bengaluru hospital names with simulated operational profiles.
+
+### 4.2 Supporting tables (created in Step 2 unless noted)
 
 | Table | Purpose |
 |---|---|
-| `hospital_users` (profile) | maps `auth.users.id` → `hospital_id` + `role` (REFERRER / RECEIVER / ADMIN) |
+| `equipment_types`, `specialist_types` | catalogues giving EQ_*/FAC_*/SP_* identifiers real FKs. Care facilities (FAC_*) share `equipment_types` and `hospital_equipment` (category column) |
+| `baby_expected_equipment`, `baby_expected_specialists` | junction tables for the expected profile |
+| `hospital_users` (profile) — **Step 3** | maps `auth.users.id` → `hospital_id` + `role` (REFERRER / RECEIVER / ADMIN) |
 | `baby_expected_requirements` | evaluation ground truth, **never** sent to Gemini or joined into AI input |
 | `hospital_capacity` | synthetic beds by type: `total`, `occupied`, `reserved`, `checked_at`, `is_synthetic` |
 | `ai_requirement_extractions` | raw AI draft, validation result, provider, model, reviewed values, reviewer, review time, method (AI / MANUAL) |
 | `report_access_grants` | transfer → hospital grant with `expires_at`, `revoked_at` |
 | `audit_logs` | actor, hospital, action, object type/id, timestamp, result |
-| `transfers` *(open, Step 2/7)* | coordination lifecycle after acceptance. A separate table is preferred over a second status column on `transfer_requests`, to keep two state machines apart. Decided after schema inspection. |
+| `transfers` | coordination lifecycle after acceptance (D3 resolved in Step 2: separate table, unique per referral and per accepted attempt) |
 
 ### 4.3 Integrity rules
 - Partial unique index: at most one `ACCEPTED`/`CONFIRMED` attempt per `transfer_request`.
